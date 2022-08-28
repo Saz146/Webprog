@@ -1,0 +1,50 @@
+
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #00AAFF;
+  color: white;
+  font-size: 30px;
+}
+
+html {
+  scroll-behavior: smooth;
+ }
+
+* {
+  display: default;
+}
+
+.column {
+  float: left;
+  width: 48%;
+}
+
+.row {
+  height: 100px;
+}
+
+.adviceText {
+  border: solid 1px black;
+  background-color: white;
+  min-width:100px;
+  padding: 5px;
+  display: inline-block;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.fcapital {
+  text-transform: uppercase;
+}
+
+.column {
+  background-color: white;
+
+}

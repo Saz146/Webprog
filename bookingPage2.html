@@ -1,0 +1,216 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="bookingstyle2.css">
+  <div class="header">
+  <h1>Russel Street Medical</h1>
+   <img src="./logo.jpg">
+  </div>
+
+</head>
+
+<nav>
+  <u1>
+    <li><a href="Home.html" class="button">HOME</a></li>
+  </u1>
+</nav>
+
+<title>Russel Street Medical</title>
+<style>
+body {background-color: white;}
+
+</style>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+
+
+     <body>
+
+
+         <style media="screen">
+          h1{font-family: 'Roboto', sans-serif;}
+          h2{font-family: 'Roboto', sans-serif;}
+          h3{font-family: 'Roboto', sans-serif;}
+          h4{font-family: 'Roboto', sans-serif;}
+          p1{font-family: 'Lato', sans-serif;}
+          label{font-family: 'Lato', sans-serif;}
+          li{font-family: 'Lato', sans-serif;}
+         </style>
+
+
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"/> -->
+
+
+<div class="row">
+  <div class="column" >
+    <label for="pid">Patient Id</label>
+  </div>
+<div class="column">
+    <input type="text" class="fcapital" id="pid"></input>
+
+<script>
+function checkPId() {
+  let text = document.getElementById('pid').value;
+  let result = text.slice(2, text.length-1);
+  // for loop over every character
+  // turn the current character into a integer
+  // add this to the total
+  let total = 0;
+  for (let i = 0; i < result.length; i++) {
+    total += parseInt(result[i]);
+  }
+  let remainder = total % 26;
+  if (remainder === 0)
+  {
+    remainder = 26;
+  }
+  let checkSumChar = String.fromCharCode(64 + remainder);
+
+  if (text.toUpperCase()[text.length-1] !== checkSumChar)
+  {
+    alert("Last character is wrong");
+  }
+  else {
+    alert("Submit Successful!")
+  }
+}
+</script>
+
+
+
+
+</div>
+</div>
+<div class="row">
+  <div class="column" ">
+    <label for="date">Date</label>
+  </div>
+  <div class="column" >
+  <input type="date" id="date"min="2050-01-01" onfocus="this.min=new Date().toISOString().split('T')[0]" />
+  </div>
+</div>
+<div class="row">
+  <div class="column" >
+    <p1>Time</p1>
+  </div>
+  <div class="column" >
+
+    <style>
+    .button {
+      background-color: #ddd;
+      border: none;
+      color: black;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 16px;
+    }
+
+    .button:hover {
+      background-color: #f1f1f1;
+    }
+    </style>
+
+
+    <button class="button">9am-12pm</button>
+    <button class="button">12pm-3pm</button>
+    <button class="button">3pm-6pm</button>
+
+    <div class="form-group">
+      <input id="checkboxR" data-type='9am' name='selectType' type='radio'>
+      <label for="checkboxR"></label>
+      <input id="checkboxC" data-type='12pm' name='selectType' type='radio'>
+      <label for="checkboxC"></label>
+      <input id="checkboxI" data-type='3pm' name='selectType' type='radio'>
+      <label for="checkboxI"></label>
+    </div>
+
+    <form name="9am_info" action="/result/" method="get" class="form-horizontal" role="form">
+    </form>
+    <form name="12pm_info" action="/result/" method="get" class="form-horizontal" role="form">
+    </form>
+    <form name="3pm_info" action="/result/" method="get" class="form-horizontal" role="form">
+    </form>
+  </div>
+
+
+<div class="row">
+  <div class="column">
+    <p1>Appointment Reason</p1>
+  </div>
+  <div class="column">
+    <body>
+    		<select id="language" onChange="update()">
+              <option value="">Please Select</option>
+    			<option value="Blood test: That some tests require some fasting ahead of time and that a staff member will advise them on this prior to the appointment.">Blood Test</option>
+    			<option value="Covid Booster Shot: Advice that everyone should arrange to have
+    their third shot as soon as possible and adults over the age of 30
+    should have their fourth shot to protect against new variant strains.">Covid Booster Shot</option>
+    			<option value="Influenza: The best time to get vaccinated is in April and May each
+    year for optimal protection over the winter months.
+    ">Influenza Shot</option>
+                <option value="Childhood vaccines: A disclaimer that multiple vaccines are normally
+    administered in combination and may cause the child to be sluggish
+    or feverous for 24 to 48 hours afterwards.">Childhood Vaccination Shots</option>
+    		</select>
+    	</body>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" >
+    <p></p>
+  </div>
+  <div class="column" contenteditable>
+    <span class="adviceText" role="textbox" id="value" contenteditable="false"></span>
+
+		<script type="text/javascript">
+			function update() {
+				var select = document.getElementById('language');
+				var option = select.options[select.selectedIndex];
+
+				document.getElementById('value').textContent = option.value;
+			}
+		</script>
+
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <p></p>
+  </div>
+  <div class="column">
+
+    <form action="" method="post" id="myForm">
+       <button type="submit" class="btn btn-sm btn-info" name="something" onclick="checkPId()"><i class="fa fa-check"></i>Submit</button>
+   </form>
+  </div>
+</div>
+
+
+<div class="footer">
+  <p1>To contact the clinic, call 035558650 or come to the store at 340 Russel
+  St, Melbourne.</p1>
+  <p1>Sahan Malagala (s3943554)</p1>
+
+  <style>
+  .footer {
+     position: relative;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: #FFD400;
+     color: black;
+     text-align: center;
+  }
+  </style>
+
+
+</div>
+
+</html>

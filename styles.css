@@ -1,0 +1,47 @@
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #00AAFF;
+  color: white;
+  font-size: 30px;
+}
+
+html {
+  scroll-behavior: smooth;
+ }
+
+
+.footer {
+padding: 0
+margin: 0
+}
+
+
+a:link {
+  
+
+}
+
+a:visited {
+  color: #eb831a;
+
+}
+
+a:hover {
+  color: #0000FF;
+
+}
+
+a:focus {
+  color: #FFFF00;
+
+}
+
+a:active {
+  color: #6495ED;
+
+}
+
+table, th, td {
+  border: 1px solid;
+}
